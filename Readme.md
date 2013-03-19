@@ -6,7 +6,7 @@ stdin
 ## How to install:
 
 ```bash
-curl -s {raw_url} > gist.py
+curl -s https://raw.github.com/aseba/GistPy/master/gist.py > gist.py
 chmod 755 gist.py
 ```
 optional:
