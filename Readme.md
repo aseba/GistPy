@@ -26,10 +26,10 @@ cat file | gist.py
 ```
 
 ## Options
-* --name {*-n*}: Sets the name for the file
-* --description {*-d*}: Sets the description for the gist
-* --open {*-o*}: Opens the url returned by github using the command `open` (Mac Only I suppose)
-* --private {*-p*}: Creates the gist as private
+* --name -n: Sets the name for the file
+* --description -d: Sets the description for the gist
+* --open -o: Opens the url returned by github using the command `open` (Mac Only I suppose)
+* --private -p: Creates the gist as private
 
 Example:
 ```bash
