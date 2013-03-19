@@ -1,6 +1,6 @@
 # gist.py
 
-Small python script that creates a new anonymous gist with content coming from
+Small python script that creates a new anonymous gist at gist.github.com with content coming from
 stdin
 
 ## How to install:
