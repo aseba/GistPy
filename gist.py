@@ -16,7 +16,15 @@ parser.add_option("-o", "--open", action='store_true', dest="open", default=Fals
 
 (options, args) = parser.parse_args()
 
-content = "\n".join([line for line in sys.stdin])
+try:
+	content = "\n".join([line for line in sys.stdin])
+except:
+	print "Something went wrong reading from STDIN"
+	sys.exit(1)
+
+if not content.strip():
+	print "Content was empty"
+	sys.exit(1)
 
 payload = { "description": options.description, "public": options.public, "files": { options.name: { "content": content } } }
 
@@ -32,8 +40,8 @@ try:
 		else:
 			print result['html_url']
 	else:
-		print result
+		print "Github said: %s" % result
 
 except ValueError:
-	print "Something went wrong when talking with github: ", sys.exc_info()[0]
-
+	print "Something went wrong when talking with github: %s" % sys.exc_info()[0]
+	sys.exit(1)
