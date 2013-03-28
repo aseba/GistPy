@@ -29,10 +29,12 @@ cat file | gist.py
 * --name -n: Sets the name for the file
 * --description -d: Sets the description for the gist
 * --open -o: Opens the url returned by github using the command `open` (Mac Only I suppose)
-* --private -p: Creates the gist as private
+* --private -x: Creates the gist as private
+* --username -u: Logins to github.com with this username
+* --password -p: Logins to github.com with this password
 
 Example:
 ```bash
-cat gist.py | gist.py -n "gist.py" -d "Small python script that creates a new anonymous gist with content coming from stdin" -o -p
+cat gist.py | gist.py -n "gist.py" -d "Small python script that creates a new anonymous gist with content coming from stdin" -o -x -u aseba -p shhthisisasecret
 ```
 
