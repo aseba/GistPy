@@ -35,6 +35,6 @@ cat file | gist.py
 
 Example:
 ```bash
-cat gist.py | gist.py -n "gist.py" -d "Small python script that creates a new anonymous gist with content coming from stdin" -o -x -u aseba -p shhthisisasecret
+cat gist.py | gist.py -n "gist.py" -d "Small python script that creates a new anonymous gist with content coming from stdin" -o -p -U aseba -P shhthisisasecret
 ```
 
