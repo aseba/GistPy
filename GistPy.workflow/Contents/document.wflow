@@ -59,7 +59,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>pbpaste | /usr/local/bin/GistPy -p -o | pbcopy</string>
+					<string>LANG=en_US.UTF-8 pbpaste | /usr/local/bin/GistPy -p -o | LANG=en_US.UTF-8 pbcopy</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
