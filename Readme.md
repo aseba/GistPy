@@ -5,9 +5,7 @@ stdin
 
 ## TODO
 
-- [Better security. Password in plain text in the script sucks](https://github.com/aseba/GistPy/issues/1)
-- [Automator path is hardcoded](https://github.com/aseba/GistPy/issues/2)
-- [from-pastebin.sh has a hardcoded path to the script](https://github.com/aseba/GistPy/issues/3)
+[See issues](https://github.com/aseba/GistPy/issues)
 
 ## How to install:
 
