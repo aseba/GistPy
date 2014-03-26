@@ -38,3 +38,7 @@ Example:
 cat gist.py | gist.py -n "gist.py" -d "Small python script that creates a new anonymous gist with content coming from stdin" -o -p -U aseba -P shhthisisasecret
 ```
 
+## OSX Service
+
+I've created an automator service that calls `from-pastebin.sh`. If you bind that automator script to a keybinding in your mac, you can have a quick keybinding to post gists in github ;)
+
