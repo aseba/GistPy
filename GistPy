@@ -1,0 +1,149 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+""" Gistpy. """
+
+
+import json
+import sys
+import urllib2
+import base64
+import subprocess
+import os
+import ConfigParser
+
+from optparse import OptionParser
+
+
+def configSectionMap(section):
+    dict1 = {}
+    options = config.options(section)
+    for option in options:
+        try:
+            dict1[option] = config.get(section, option)
+            if dict1[option] == -1:
+                print("skip: %s" % option)
+        except:
+            print("exception on %s!" % option)
+            dict1[option] = None
+    return dict1
+
+
+parser = OptionParser()
+parser.add_option("-d", "--description",
+                  dest="description",
+                  default="Gist uploaded with gist.py\
+https://github.com/aseba/GistPy",
+                  help="Description",
+                  metavar="DESC")
+
+parser.add_option("-n", "--name",
+                  dest="name",
+                  help="File Name",
+                  default="",
+                  metavar="NAME")
+
+parser.add_option("-p", "--private",
+                  action='store_false',
+                  dest="public",
+                  default=True,
+                  help="Set Gist as private")
+
+parser.add_option("-o", "--open",
+                  action='store_true',
+                  dest="open",
+                  default=False,
+                  help="Open html url using command 'open' when finished")
+
+parser.add_option("-r", "--reconfigure",
+                  dest="reconfigure",
+                  action='store_true',
+                  default=False,
+                  help="Sets password to login at github.com")
+
+(options, args) = parser.parse_args()
+
+config_path = os.path.expanduser('~') + '/.gistpy.ini'
+config = ConfigParser.ConfigParser()
+
+if not os.path.isfile(config_path) or options.reconfigure:
+    config.add_section('gistpy')
+
+    print "If you want to be able to create gists in your name you'll\
+have to configure your username and token to access gists.github.com"
+    allow_private_gists = raw_input("Do you want to create private \
+gists? [yes/no]: ")
+    if allow_private_gists.lower() in ['y', 'ye', 'yes']:
+        allow_private_gists = True
+    else:
+        allow_private_gists = False
+
+    config.set('gistpy', 'allow_private_gists', allow_private_gists)
+
+    if allow_private_gists:
+        print "To be able to create private gists you'll have to create an \
+application token. Follow steps 1-5 in \
+https://help.github.com/articles/creating-an-access-token-for-command-line-use\
+and create an app that only has gists access"
+        username = raw_input("Enter Github Username: ")
+        password = raw_input("Enter Github App Access Token: ")
+
+        config.add_section('gist.github.com')
+
+        config.set('gist.github.com', 'username', username)
+        config.set('gist.github.com', 'password', password)
+
+    cfgfile = open(config_path, 'w+')
+    config.write(cfgfile)
+    cfgfile.close()
+
+    print 'Configuration is was saved in %s. You can now use it without problems' % (config_path)
+    sys.exit(0)
+
+config.read(config_path)
+
+try:
+    content = "".join([line for line in sys.stdin])
+except:
+    print "Something went wrong reading from STDIN"
+    sys.exit(1)
+
+if not content.strip():
+    print "Content was empty"
+    sys.exit(1)
+
+payload = {"description": options.description,
+           "public": options.public,
+           "files": {options.name: {"content": content}}
+           }
+
+url = 'https://api.github.com/gists'
+
+request = urllib2.Request(url)
+
+if options.private and configSectionMap('gistpy')['allow_private_gists']:
+    username = configSectionMap('gist.github.com')['username']
+    password = configSectionMap('gist.github.com')['password']
+    base64string = base64.encodestring(
+        '%s:%s' % (username, password)).replace('\n', '')
+    request.add_header("Authorization", "Basic %s" % base64string)
+
+try:
+    raw_result = urllib2.urlopen(request, json.dumps(payload))
+except urllib2.HTTPError, error:
+    print "Something went wrong when talking with github: " % error.read()
+    sys.exit(1)
+
+try:
+    result = json.loads(raw_result.read())
+    if 'html_url' in result:
+        if options.open:
+            subprocess.call(['open', result['html_url']])
+        else:
+            print result['html_url']
+    else:
+        print "Github said: %s" % result
+
+except ValueError, error:
+    print "Something went wrong when talking with github: %s" % error.read()
+    sys.exit(1)
