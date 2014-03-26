@@ -121,7 +121,7 @@ url = 'https://api.github.com/gists'
 
 request = urllib2.Request(url)
 
-if options.private and configSectionMap('gistpy')['allow_private_gists']:
+if not options.public and configSectionMap('gistpy')['allow_private_gists']:
     username = configSectionMap('gist.github.com')['username']
     password = configSectionMap('gist.github.com')['password']
     base64string = base64.encodestring(
@@ -138,6 +138,7 @@ try:
     result = json.loads(raw_result.read())
     if 'html_url' in result:
         if options.open:
+            print result['html_url']
             subprocess.call(['open', result['html_url']])
         else:
             print result['html_url']
