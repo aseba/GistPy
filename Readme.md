@@ -3,6 +3,10 @@
 Small python script that creates a new anonymous gist at [gist.github.com](https://gist.github.com/) with content coming from
 stdin
 
+## TODO
+
+- Better security. Password in plain text in the script sucks
+
 ## How to install:
 
 ```bash
