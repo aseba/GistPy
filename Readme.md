@@ -31,6 +31,12 @@ or
 cat file | gist.py
 ```
 
+or even more useful in mac
+
+```bash
+pbcopu | gist.py
+```
+
 ## Options
 * --name -n: Sets the name for the file
 * --description -d: Sets the description for the gist
