@@ -46,6 +46,12 @@ or even more useful in mac
 pbcopy | GistPy
 ```
 
+or even more useful in mac
+
+```bash
+pbcopy | gist.py
+```
+
 ## Options
 * --name -n: Sets the name for the file
 * --description -d: Sets the description for the gist
