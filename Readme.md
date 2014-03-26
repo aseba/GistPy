@@ -6,6 +6,7 @@ stdin
 ## TODO
 
 - Better security. Password in plain text in the script sucks
+- Automator path is hardcoded
 
 ## How to install:
 
