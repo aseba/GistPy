@@ -34,7 +34,7 @@ cat file | gist.py
 or even more useful in mac
 
 ```bash
-pbcopu | gist.py
+pbcopy | gist.py
 ```
 
 ## Options
