@@ -7,6 +7,7 @@ stdin
 
 - Better security. Password in plain text in the script sucks
 - Automator path is hardcoded
+- from-pastebin.sh has a hardcoded path to the script 
 
 ## How to install:
 
