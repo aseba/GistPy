@@ -16,9 +16,9 @@ chmod 755 GistPy
 mv GistPy /usr/local/bin/GistPy
 ```
 
-To configure GistPy executing GistPy once and follow the steps on screen.
+To configure GistPy execute GistPy once and follow the steps on screen.
 
-You can use your username and password or a [username and access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use)
+You can use your username and password or a [username and access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use).
 
 ```bash
 GistPy
