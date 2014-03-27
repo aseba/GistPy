@@ -60,19 +60,19 @@ cat GistPy | GistPy -n "GistPy" -d "Small python script that creates a new anony
 
 ## OSX Service
 
-I've created an automator service `GistPy` that will add a service that you can execute using a keybinding.
+I've created an automator service `GistPy` that will add a service that you can execute using a keybinding in order to create a gist with the content of the clipboard.
 
-It just executes the command `pbpaste | GistPy -x -o | pbcopy`
+It just executes the command `pbpaste | GistPy -x -o | pbcopy`.
 
 ### Installation
 
-Double click `GistPy.workflow` in your mac
+Double click `GistPy.workflow` in your mac and click *Install*
 
 ### Keyboard Shortcut
 
 After you've installed the service, you should go to `system preferences > keyboard > shortcuts` and in the left pane select `Services`
 
-You should find in the `General` section the service `GistPy`, click in `add a shortcut` and add a shortcut. That is it
+In the `General` section You should find the service `GistPy`, click in `add a shortcut` and create on. That is it.
 
 ### Security
 
