@@ -1,7 +1,8 @@
 # GistPy
 
-Small python script that creates a new anonymous gist at [gist.github.com](https://gist.github.com/) with content coming from
-stdin
+GistPy is a small python script that creates a new anonymous (or not) gist at [gist.github.com](https://gist.github.com/) with content coming from stdin.
+
+It also has an [Automator Script](#osx-service) for mac to be able to bind the process to a keystroke and paste gists directly from the content of the clipboard.
 
 ## TODO
 
