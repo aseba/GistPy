@@ -97,7 +97,7 @@ and create an app that only has gists access"
     config.write(cfgfile)
     cfgfile.close()
 
-    print 'Configuration is was saved in %s. You can now use it without problems' % (config_path)
+    print 'Configuration was saved in %s. You can now use GistPy without problems' % (config_path)
     sys.exit(0)
 
 config.read(config_path)
