@@ -83,7 +83,7 @@ gists? [yes/no]: ")
     if allow_private_gists:
         print "To be able to create private gists you'll have to create an \
 application token. Follow steps 1-5 in \
-https://help.github.com/articles/creating-an-access-token-for-command-line-use\
+https://help.github.com/articles/creating-an-access-token-for-command-line-use \
 and create an app that only has gists access"
         username = raw_input("Enter Github Username: ")
         password = raw_input("Enter Github App Access Token: ")
