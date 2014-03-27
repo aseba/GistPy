@@ -32,7 +32,7 @@ def configSectionMap(section):
 parser = OptionParser()
 parser.add_option("-d", "--description",
                   dest="description",
-                  default="Gist uploaded with gist.py\
+                  default="Gist uploaded with gist.py \
 https://github.com/aseba/GistPy",
                   help="Description",
                   metavar="DESC")
