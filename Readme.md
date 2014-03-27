@@ -32,19 +32,25 @@ GistPy --reconfigure
 
 ## Usage
 ```bash
-GistPy < file
-```
+~ GistPy < file
 
 or
 
-```bash
-cat file | GistPy
+~ cat file | GistPy
 ```
 
-or even more useful in mac
+Or even more useful in mac to create a gist with the content of your clipboard
 
 ```bash
-pbcopy | GistPy
+LANG=en_US.UTF-8 pbcopy | GistPy
+```
+
+`LANG=en_US.UTF-8` is to force UTF-8 in case you have weird characters copied in your clipboard
+
+Also, you can create a gist and copy the URL to the clipboard
+
+```bash
+cat file | GistPy | pbcopy
 ```
 
 ## Options
