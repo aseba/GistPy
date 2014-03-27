@@ -68,7 +68,7 @@ cat GistPy | GistPy -n "GistPy" -d "Small python script that creates a new anony
 
 I've created an automator service `GistPy` that will add a service that you can execute using a keybinding in order to create a gist with the content of the clipboard.
 
-It just executes the command `pbpaste | GistPy -x -o | pbcopy`.
+It just executes the command `pbpaste | GistPy -p -o | pbcopy`.
 
 ### Installation
 
