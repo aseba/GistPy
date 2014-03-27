@@ -76,4 +76,4 @@ In the `General` section You should find the service `GistPy`, click in `add a s
 
 ### Security
 
-If you've configured your username and password in GistPy you'll create private gists, if not, all gists are going to be public
+If you've configured your username and password in GistPy you'll create private gists, if not, all gists are going to be public and anonymous.
