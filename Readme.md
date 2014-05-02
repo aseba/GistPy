@@ -42,7 +42,7 @@ or
 Or even more useful in mac to create a gist with the content of your clipboard
 
 ```bash
-LANG=en_US.UTF-8 pbcopy | GistPy
+LANG=en_US.UTF-8 pbpaste | GistPy
 ```
 
 `LANG=en_US.UTF-8` is to force UTF-8 in case you have weird characters copied in your clipboard
