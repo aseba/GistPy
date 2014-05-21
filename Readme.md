@@ -78,7 +78,7 @@ Double click `GistPy.workflow` in your mac and click *Install*
 
 After you've installed the service, you should go to `system preferences > keyboard > shortcuts` and in the left pane select `Services`
 
-In the `General` section You should find the service `GistPy`, click in `add a shortcut` and create on. That is it.
+In the `General` section You should find the service `GistPy`, click in `add a shortcut` and create one. That is it.
 
 ### Security
 
