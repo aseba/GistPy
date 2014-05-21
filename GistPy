@@ -33,7 +33,7 @@ parser = OptionParser()
 parser.add_option("-d", "--description",
                   dest="description",
                   default="Gist uploaded with gist.py \
-https://github.com/aseba/GistPy",
+http://j.mp/aseba-gistpy",
                   help="Description",
                   metavar="DESC")
 
