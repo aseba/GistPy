@@ -11,7 +11,7 @@ It also has an [Automator Script](#osx-service) for mac to be able to bind the p
 ## How to install:
 
 ```bash
-curl -s https://raw.githubusercontent.com/aseba/GistPy/master/GistPy > GistPy
+curl -Ls https://raw.github.com/aseba/GistPy/master/GistPy > GistPy
 chmod 755 GistPy
 mv GistPy /usr/local/bin/GistPy
 ```
